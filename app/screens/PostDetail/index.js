@@ -2,7 +2,6 @@ import { Text, View, StyleSheet, ActivityIndicator, FlatList } from 'react-nativ
 import React, { Component } from 'react'
 import Screen from 'components/Screen/Index'
 import Character from "components/Character/Index";
-
 import api from 'api/Index';
 
 export class Index extends Component {
@@ -60,6 +59,7 @@ export class Index extends Component {
         <Text style={styles.boldText}>{episode}</Text>
         <Text style={styles.boldText}>{episodeName}</Text>
         <Text style={styles.boldText}>{episodeDate}</Text>
+        <Text style={styles.boldTextS}>Characters</Text>
         {
           loading ?
           <ActivityIndicator size="large" color="#00ff00" />
@@ -91,6 +91,12 @@ const styles = StyleSheet.create({
   boldText: {
     fontSize: 16,
     fontWeight: 'bold'
+  },
+  boldTextS: {
+    fontSize: 17,
+    fontWeight: 'bold',
+    marginBottom: 5,
+    color: 'black'
   }
 })
 

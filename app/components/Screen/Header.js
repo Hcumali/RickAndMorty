@@ -52,7 +52,7 @@ export class Header extends Component {
 
 const styles = StyleSheet.create({
     container1: {
-      backgroundColor: "rgb(255,255,255)",
+      backgroundColor: "#A2E5DA",
       height: 65,
       padding: 18,
       flexDirection: "row",
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
       justifyContent: "space-between",
     },
     container2: {
-        backgroundColor: "rgb(255,255,255)",
+        backgroundColor: "#A2E5DA",
         height: 65,
         padding: 18,
         flexDirection: "row",
