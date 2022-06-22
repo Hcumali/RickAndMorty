@@ -1,14 +1,13 @@
-import { Text, View } from 'react-native'
 import React, { Component } from 'react'
+import Navigator from 'navigation/RootStack'
 
-export class index extends Component {
+export class Index extends Component {
   render() {
     return (
-      <View>
-        <Text>index</Text>
-      </View>
-    )
+      <Navigator />
+    );
   }
 }
 
-export default index
+export default Index
+
