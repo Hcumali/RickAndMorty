@@ -1,12 +1,15 @@
 import { Text, View } from 'react-native'
 import React, { Component } from 'react'
+import Screen from 'components/Screen/Index'
 
 export class Index extends Component {
   render() {
     return (
-      <View>
-        <Text>Post Detail Screen</Text>
-      </View>
+      <Screen showHeader={true} showBack>
+        <View>
+          <Text>Post Detail Screen</Text>
+        </View>
+      </Screen>
     )
   }
 }

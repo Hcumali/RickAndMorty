@@ -1,10 +1,15 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React, { Component } from 'react'
 import Icon from 'react-native-vector-icons/Ionicons';
+import * as RootNavigation from 'navigation/RootNavigation';
 
 export class Header extends Component {
     constructor(props) {
         super(props);
+    }
+
+    componentDidMount() {
+        console.log("nav: ", this.props.navigation);
     }
 
     render() {
@@ -19,24 +24,38 @@ export class Header extends Component {
 
         if (showBack) {
             return (
-                <View style={styles.container}>
-                    <Icon name='qr-code-sharp' size={26} />
-                    <Text style={styles.rickMorty}>Rick And Morty</Text>
+                <View style={styles.container1}>
+                    <View>
+                        <TouchableOpacity onPress={() => RootNavigation.goBack()}>
+                            <View>
+                                <Icon name='caret-back-sharp' color={"black"} size={24} />
+                            </View>
+                        </TouchableOpacity>
+                    </View>
+                    <View>
+                        <TouchableOpacity onPress={() => RootNavigation.navigate("Flow")}>
+                            <View>
+                                <Text style={styles.rickMorty}>Rick And Morty</Text>
+                            </View>
+                        </TouchableOpacity>
+                    </View>
                 </View>
             );
         }
 
         return (
-            <View style={styles.container}>
-                <Text>Work</Text>
+            <View style={styles.container2}>
+            <View>
+                <Text style={styles.rickMorty}>Rick And Morty</Text>
             </View>
+        </View>
         );
 
     }
 }
 
 const styles = StyleSheet.create({
-    container: {
+    container1: {
       backgroundColor: "rgb(255,255,255)",
       height: 65,
       padding: 18,
@@ -44,6 +63,14 @@ const styles = StyleSheet.create({
       alignItems: "center",
       justifyContent: "space-between",
     },
+    container2: {
+        backgroundColor: "rgb(255,255,255)",
+        height: 65,
+        padding: 18,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "flex-end",
+      },
     rickMorty: {
         fontWeight: 'bold',
         color: 'green'
