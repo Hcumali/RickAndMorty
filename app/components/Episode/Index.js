@@ -5,7 +5,8 @@ import * as RootNavigation from 'navigation/RootNavigation';
 type Props = {
   name: String,
   episode: String,
-  date: String
+  date: String,
+  episodeUrl: String
 }
 
 export class Index extends React.Component<Props> {
@@ -14,10 +15,10 @@ export class Index extends React.Component<Props> {
   }
 
   render() {
-    const { name, episode, date } = this.props;
+    const { name, episode, date, episodeUrl } = this.props;
 
     return (
-      <TouchableOpacity onPress={() => RootNavigation.navigate("PostDetail", {test: "deneme"})}>
+      <TouchableOpacity onPress={() => RootNavigation.navigate("PostDetail", {url: episodeUrl})}>
         <View style={styles.container}>
           <View style={styles.content}>
             <Text style={styles.boldTextForName}>{name}</Text>

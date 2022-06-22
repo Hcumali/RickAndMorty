@@ -63,7 +63,7 @@ export class Index extends Component {
 
   renderItem = ({item}) => {
     return(
-      <Episode name={item.name} episode={item.episode} date={item.air_date} />
+      <Episode name={item.name} episode={item.episode} date={item.air_date} episodeUrl={item.url} />
     );
   }
 
@@ -90,7 +90,7 @@ export class Index extends Component {
     const { numberOfEpisodes, nextPage, episodes, loading } = this.state;
 
     return (
-      <Screen showHeader={true} >
+      <Screen showHeader={true} contentStyle={{alignItems: 'center'}} >
         <Text style={styles.boldText}>{numberOfEpisodes} adet bölüm bulundu.</Text>
         <FlatList
             data={episodes}
