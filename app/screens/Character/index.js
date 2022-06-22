@@ -32,9 +32,9 @@ export class Index extends Component {
     .then((res) => {
       res.episode.forEach((i, idx, array) => {
         if (idx === array.length - 1) {
-          _episodes.push(js.splitBySpecialCharacter(js.reverse(i), "/")[0])
+          _episodes.push(js.splitBySpecialCharacter(i, "/")[5])
         } else {
-          _episodes.push(js.splitBySpecialCharacter(js.reverse(i), "/")[0] + ", ")
+          _episodes.push(js.splitBySpecialCharacter(i, "/")[5] + ", ")
         }
       });
       this.setState({
