@@ -88,7 +88,7 @@ export class Index extends Component {
 
     return(
       nextPage != null ?
-      <View style={{alignItems: 'center', justifyContent: 'center'}}>
+      <View style={{alignItems: 'center', justifyContent: 'center', marginBottom: 9}}>
         <Button name={"Daha Fazla Göster"} onPress={this.loadMoreData} />
       </View>
       :
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     color: 'black',
-    marginTop: 9
+    marginVertical: 9
   }
 })
 
