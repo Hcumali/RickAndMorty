@@ -30,8 +30,12 @@ export class Index extends Component {
 
     api.requestWithURL(this.props.route.params.characterUrl)
     .then((res) => {
-      res.episode.forEach(item => {
-        _episodes.push(js.splitBySpecialCharacter(js.reverse(item), "/")[0])
+      res.episode.forEach((i, idx, array) => {
+        if (idx === array.length - 1) {
+          _episodes.push(js.splitBySpecialCharacter(js.reverse(i), "/")[0])
+        } else {
+          _episodes.push(js.splitBySpecialCharacter(js.reverse(i), "/")[0] + ", ")
+        }
       });
       this.setState({
         image: res.image ,

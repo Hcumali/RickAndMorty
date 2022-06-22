@@ -9,7 +9,7 @@ export class Header extends Component {
     }
 
     render() {
-        const { showBack } = this.props;
+        const { showBack, showRepeat, repeatFunction } = this.props;
 
         const backButtonHitSlop = {
             top: 10,
@@ -25,6 +25,27 @@ export class Header extends Component {
                         <TouchableOpacity onPress={() => RootNavigation.goBack()}>
                             <View>
                                 <Icon name='caret-back-sharp' color={"black"} size={24} />
+                            </View>
+                        </TouchableOpacity>
+                    </View>
+                    <View>
+                        <TouchableOpacity onPress={() => RootNavigation.navigate("Flow")}>
+                            <View>
+                                <Text style={styles.rickMorty}>Rick And Morty</Text>
+                            </View>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+            );
+        }
+
+        if (showRepeat) {
+            return (
+                <View style={styles.container1}>
+                    <View>
+                        <TouchableOpacity onPress={() => repeatFunction()}>
+                            <View>
+                                <Icon name='repeat' color={"black"} size={27} />
                             </View>
                         </TouchableOpacity>
                     </View>

@@ -13,12 +13,21 @@ export class Index extends Component {
       numberOfEpisodes: null,
       nextPage: null,
       episodes: [],
-      loading: false
+      loading: false,
+      refreshPage: false
     };
   }
 
   componentDidMount() {
     this.getFirstData()
+  }
+
+  repeatFunction = () => {
+    this.setState({
+      refreshPage: true
+    }, () => {
+      this.getFirstData()
+    })
   }
 
   //#region Functions
@@ -30,6 +39,11 @@ export class Index extends Component {
         numberOfEpisodes: res.info.count,
         nextPage: res.info.next,
         episodes: res.results
+      });
+    })
+    .finally(() => {
+      this.setState({
+        refreshPage: false
       });
     });
   }
@@ -87,16 +101,18 @@ export class Index extends Component {
   //#endregion
 
   render() {
-    const { numberOfEpisodes, nextPage, episodes, loading } = this.state;
+    const { numberOfEpisodes, nextPage, episodes, loading, refreshPage } = this.state;
 
     return (
-      <Screen showHeader={true} contentStyle={{alignItems: 'center'}} >
+      <Screen showHeader={true} showRepeat repeatFunction={() => this.repeatFunction()} contentStyle={{alignItems: 'center'}} >
         <Text style={styles.boldText}>{numberOfEpisodes} adet bölüm bulundu.</Text>
         <FlatList
             data={episodes}
             renderItem= {this.renderItem}
             keyExtractor={this.keyExtractor}
             ListFooterComponent={this.ListFooterComponent}
+            refreshing={refreshPage}
+            onRefresh={() => this.repeatFunction()}
         />
         {
           loading ?
@@ -114,7 +130,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     color: 'black',
-    marginVertical: 2
+    marginTop: 9
   }
 })
 

@@ -56,9 +56,9 @@ const styles = StyleSheet.create({
     width: "50%",
   },
   image: {
-    marginTop: 6,
     width: 150,
-    height: 190
+    height: 190,
+    marginVertical: 3
   },
   boldText: {
     fontSize: 15,
