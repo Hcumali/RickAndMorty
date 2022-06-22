@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./app/",
+    "paths": {
+      "screens": ["screens"],
+      "components": ["components"],
+      "api": ["api"],
+      "navigation": ["navigation"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
