@@ -1,5 +1,5 @@
 import { Text, View, StyleSheet, TouchableOpacity, Image } from 'react-native'
-import React from 'react'
+import React, { memo } from 'react'
 import * as RootNavigation from 'navigation/RootNavigation';
 
 type Props = {
@@ -17,10 +17,10 @@ export class Index extends React.Component<Props> {
     const { name, episode, date } = this.props;
 
     return (
-      <TouchableOpacity onPress={() => RootNavigation.navigate("PostDetail", {test: "testt235"})} style={{margin: 5}}>
+      <TouchableOpacity onPress={() => RootNavigation.navigate("PostDetail", {test: "deneme"})}>
         <View style={styles.container}>
           <View style={styles.content}>
-            <Text style={styles.boldText}>{name}</Text>
+            <Text style={styles.boldTextForName}>{name}</Text>
             <Text style={styles.boldText}>{episode}</Text>
             <Text style={styles.boldText}>{date}</Text>
           </View>
@@ -42,28 +42,30 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     padding: 0,
-    backgroundColor: '#B4F2B6'
+    backgroundColor: '#B4F2B6',
+    margin: 10
   },
   content: {
     alignItems: 'center',
     justifyContent: 'center',
-    height: "100%",
     width: "50%",
   },
   imageView: {
     alignItems: 'center',
-    height: "100%",
     width: "50%",
   },
   image: {
-    marginTop: 5,
+    marginTop: 6,
     width: 150,
     height: 190
   },
   boldText: {
-    fontSize: 19,
+    fontSize: 15,
+    fontWeight: '500'
+  },
+  boldTextForName: {
     fontWeight: 'bold'
   }
 })
 
-export default Index
+export default memo(Index)

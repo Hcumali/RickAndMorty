@@ -1,5 +1,6 @@
-const main = "https://pik-api.pikonline.net/api/";
+const mainUrl = "https://rickandmortyapi.com/api/";
 
-export const login = main + "account/login";
-export const ArticleGetPagedData = main + "article/ArticleGetPagedData";
-export const savePost = main + "article/ArticleSave";
+export const episodePagedList = mainUrl + "episode/";
+export const episode = mainUrl + "episode/";
+export const character = mainUrl + "character/";
+

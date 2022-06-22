@@ -5,7 +5,7 @@ import Screen from 'components/Screen/Index'
 export class Index extends Component {
   render() {
     return (
-      <Screen showHeader={true} showBack>
+      <Screen showHeader={true} showBack >
         <View>
           <Text>Post Detail Screen</Text>
         </View>
