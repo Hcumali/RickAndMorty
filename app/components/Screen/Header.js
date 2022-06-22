@@ -8,10 +8,6 @@ export class Header extends Component {
         super(props);
     }
 
-    componentDidMount() {
-        console.log("nav: ", this.props.navigation);
-    }
-
     render() {
         const { showBack } = this.props;
 

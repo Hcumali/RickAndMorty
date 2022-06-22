@@ -5,7 +5,8 @@
       "screens": ["screens"],
       "components": ["components"],
       "api": ["api"],
-      "navigation": ["navigation"]
+      "navigation": ["navigation"],
+      "assets": ["assets"]
     }
   },
   "exclude": ["node_modules"]

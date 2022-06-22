@@ -15,11 +15,8 @@ type Props = {
 export class Index extends React.Component<Props> {
     constructor(props) {
         super(props);
-
     }
-    componentDidMount() {
-        console.log("props: ", this.props);
-    }
+    
   render() {
     const {
         header,
